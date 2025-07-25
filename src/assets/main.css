@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@112.5,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Martian+Mono:wdth,wght@112.5,100..800&display=swap');
 @import 'tailwindcss';
 
 @layer base {
@@ -21,16 +21,21 @@
 @theme {
   --color-calm-grey: #e7e6e2;
   --color-zendle-orange: #fa982e;
+
   --font-inter: 'InterVariable', 'sans-serif';
   --font-inter--font-feature-settings:
     'liga', 'calt', 'ss07', 'ss08', 'cv01', 'cv08', 'cv09', 'cv10';
   --font-inter-font-variation-settings: 'normal';
+
   --font-martian-mono: 'Martian Mono', 'monospace';
+
+  --font-instrument-serif: 'Instrument Serif', 'serif';
 
   --animate-penalty: penalty 1s ease-in;
   --animate-penalty-wiggle: penalty-wiggle 0.4s ease-in-out;
   --animate-terminal: terminal 1.5s linear infinite;
   --animate-loading: loading 3s ease-in-out infinite;
+  --animate-infinite-scroll: infinite-scroll 16s linear infinite;
 
   @keyframes penalty {
     0% {
@@ -87,6 +92,15 @@
     }
     100% {
       transform: rotate(0deg);
+    }
+  }
+
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
 }

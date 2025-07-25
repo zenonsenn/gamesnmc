@@ -1,5 +1,6 @@
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
+import BackHome from '@/components/common/BackHome.vue'
 import ZendleKeyboard from '@/components/common/GameKeyboard.vue'
 import { onMounted, reactive, ref } from 'vue'
 
@@ -1069,7 +1070,7 @@ onMounted(() => {
                 <div>
                   Read the
                   <router-link
-                    to="/blog"
+                    to="/blog/zendle"
                     class="cursor-pointer rounded-lg bg-calm-grey px-2 py-1 hover:bg-zendle-orange"
                     >blog!</router-link
                   >
@@ -1152,6 +1153,11 @@ onMounted(() => {
               </button>
             </div>
 
+            <!-- Back home button min media sm -->
+            <div class="hidden rounded-lg bg-gray-300 p-3 sm:flex">
+              <BackHome class="cursor-pointer rounded-lg bg-calm-grey p-1 hover:bg-zendle-orange" />
+            </div>
+
             <!-- Informational Bar -->
             <div class="rounded-lg bg-gray-300 p-3">
               <div class="flex flex-col items-start gap-y-1 sm:flex-row sm:items-center sm:gap-y-0">
@@ -1188,6 +1194,11 @@ onMounted(() => {
                   ></button>
                 </div>
               </div>
+            </div>
+
+            <!-- Back home button media sm -->
+            <div class="rounded-lg bg-gray-300 p-3 sm:hidden">
+              <BackHome class="cursor-pointer rounded-lg bg-calm-grey p-1 hover:bg-zendle-orange" />
             </div>
           </div>
         </div>

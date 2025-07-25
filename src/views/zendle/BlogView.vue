@@ -35,7 +35,7 @@ onMounted(async () => {
         class="m-4 mb-8 flex w-full max-w-[600px] flex-col items-center justify-center gap-y-4 sm:mx-0 sm:my-4 sm:mb-8"
       >
         <router-link
-          to="/"
+          to="/play/zendle"
           class="sticky top-8 cursor-pointer rounded-lg bg-gray-300 p-1 hover:bg-zendle-orange"
           >Back to the game!</router-link
         >

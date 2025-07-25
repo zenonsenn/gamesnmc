@@ -8,6 +8,16 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/HomeView.vue'),
     },
+    {
+      path: '/play/zendle',
+      name: 'zendle',
+      component: () => import('@/views/zendle/GameView.vue'),
+    },
+    {
+      path: '/blog/zendle',
+      name: 'zendle-blog',
+      component: () => import('@/views/zendle/BlogView.vue'),
+    },
   ],
 })
 

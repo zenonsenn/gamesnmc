@@ -1,33 +1,23 @@
-import { type Ref } from 'vue'
+export interface ImageInfo {
+  url: string
+  width: number
+  height: number
+}
 
-export const useImagePreloader = async (
-  imageUrls: string[],
-  isLoading: Ref<boolean, boolean>,
-  isError: Ref<string | null, string | null>,
-): Promise<Map<string, HTMLImageElement>> => {
-  const loadedImages: Map<string, HTMLImageElement> = new Map()
-  isLoading.value = true
-  isError.value = null
-
+export const useImagePreloader = async (imageUrls: string[]): Promise<ImageInfo[]> => {
   const promises = imageUrls.map((url) => {
-    return new Promise<{ url: string; img: HTMLImageElement }>((resolve, reject) => {
+    return new Promise<ImageInfo>((resolve, reject) => {
       const img = new Image()
       img.src = url
-      img.onload = () => resolve({ url: url, img: img })
+      img.onload = () =>
+        resolve({
+          url: url,
+          width: img.naturalWidth,
+          height: img.naturalHeight,
+        })
       img.onerror = () => reject(new Error(`Failed to load image: ${url}`))
     })
   })
 
-  try {
-    const loaded = await Promise.all(promises)
-    loaded.forEach((item) => {
-      loadedImages.set(item.url, item.img)
-    })
-  } catch (error) {
-    // console.error('An error occurred during image preloading:', error)
-    isError.value = `An error occurred during image preloading: ${error}`
-  } finally {
-    isLoading.value = false
-    return loadedImages
-  }
+  return Promise.all(promises)
 }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Martian+Mono:wdth,wght@112.5,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wdth,wght@0,50..150,100..900;1,50..150,100..900&display=swap');
 @import 'tailwindcss';
 
 @layer base {
@@ -19,16 +20,26 @@
 }
 
 @theme {
+  --screen-xs: '250px';
+  --screen-s: '400px';
+
   --color-calm-grey: #e7e6e2;
   --color-zendle-orange: #fa982e;
+  --color-zen-yellow: #fac32e;
+  --color-zen-orange: #e98c29;
+  --color-zen-accent: #d36237;
+  --color-gao-blue: #6fa0c4;
+  --color-gao-white: #eee8e5;
+  --color-gao-gray: #dddddd;
+  --color-zed-blue: #307199;
 
   --font-inter: 'InterVariable', 'sans-serif';
   --font-inter--font-feature-settings:
     'liga', 'calt', 'ss07', 'ss08', 'cv01', 'cv08', 'cv09', 'cv10';
   --font-inter-font-variation-settings: 'normal';
 
+  --font-anybody: 'Anybody', 'sans-serif';
   --font-martian-mono: 'Martian Mono', 'monospace';
-
   --font-instrument-serif: 'Instrument Serif', 'serif';
 
   --animate-penalty: penalty 1s ease-in;
@@ -36,6 +47,8 @@
   --animate-terminal: terminal 1.5s linear infinite;
   --animate-loading: loading 3s ease-in-out infinite;
   --animate-infinite-scroll: infinite-scroll 16s linear infinite;
+  --animate-carousel: carousel 30s linear infinite;
+  --animate-loading-bar: loading-bar 3s ease-in-out;
 
   @keyframes penalty {
     0% {
@@ -103,4 +116,53 @@
       transform: translateX(-100%);
     }
   }
+
+  @keyframes carousel {
+    0% {
+      left: 0px;
+    }
+    99.99% {
+      left: -2094px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+
+  @keyframes loading-bar {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.fw-70 {
+  font-variation-settings: 'wdth' 70;
+}
+.fw-80 {
+  font-variation-settings: 'wdth' 80;
+}
+.fw-90 {
+  font-variation-settings: 'wdth' 90;
+}
+.fw-100 {
+  font-variation-settings: 'wdth' 100;
+}
+.fw-110 {
+  font-variation-settings: 'wdth' 110;
+}
+.fw-120 {
+  font-variation-settings: 'wdth' 120;
+}
+.fw-130 {
+  font-variation-settings: 'wdth' 130;
+}
+.fw-140 {
+  font-variation-settings: 'wdth' 140;
+}
+.fw-150 {
+  font-variation-settings: 'wdth' 150;
 }

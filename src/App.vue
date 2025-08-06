@@ -1,4 +1,9 @@
+<script setup lang="ts">
+import NavBar from '@/components/common/NavBar.vue'
+</script>
+
 <template>
+  <NavBar v-if="$route.name !== 'lost'" />
   <RouterView v-slot="{ Component }">
     <template v-if="Component">
       <KeepAlive>
@@ -9,8 +14,8 @@
           <!-- Loading state -->
           <template #fallback>
             <!-- Loading icon -->
-            <div class="flex h-screen w-full items-center justify-center">
-              <div class="h-12 w-12 animate-loading bg-zendle-orange"></div>
+            <div class="bg-gao-white flex h-screen w-full items-center justify-center">
+              <div class="animate-loading bg-zendle-orange h-12 w-12"></div>
             </div>
           </template>
         </Suspense>

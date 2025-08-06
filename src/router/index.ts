@@ -9,14 +9,14 @@ const router = createRouter({
       component: () => import('@/views/HomeView.vue'),
     },
     {
-      path: '/play/zendle',
-      name: 'zendle',
-      component: () => import('@/views/zendle/GameView.vue'),
+      path: '/gallery',
+      name: 'gallery',
+      component: () => import('@/views/GalleryView.vue'),
     },
     {
-      path: '/blog/zendle',
-      name: 'zendle-blog',
-      component: () => import('@/views/zendle/BlogView.vue'),
+      path: '/inspo',
+      name: 'inspo',
+      component: () => import('@/views/InspoView.vue'),
     },
   ],
 })

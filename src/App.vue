@@ -9,13 +9,15 @@ import NavBar from '@/components/common/NavBar.vue'
       <KeepAlive>
         <Suspense>
           <!-- Main content -->
-          <component :is="Component"></component>
+          <Transition name="fade" mode="out-in">
+            <component :is="Component"></component
+          ></Transition>
 
           <!-- Loading state -->
           <template #fallback>
             <!-- Loading icon -->
-            <div class="bg-gao-white flex h-screen w-full items-center justify-center">
-              <div class="animate-loading bg-zendle-orange h-12 w-12"></div>
+            <div class="flex h-screen w-full items-center justify-center bg-gao-white">
+              <div class="h-12 w-12 animate-loading bg-zendle-orange"></div>
             </div>
           </template>
         </Suspense>
@@ -23,3 +25,17 @@ import NavBar from '@/components/common/NavBar.vue'
     </template>
   </RouterView>
 </template>
+
+<style lang="css">
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 400ms,
+    transform 400ms;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  /* transform: translateY(-1%); */
+}
+</style>
